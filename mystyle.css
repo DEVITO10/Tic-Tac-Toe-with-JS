@@ -1,0 +1,56 @@
+html, body{
+    width: 100%;
+    height: 100%;
+}
+.tic-tac-toe-row{
+    background-color: red;
+    background-image: url("images/background.jpg");
+    background-size: 100% 100%;
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.tic-tac-toe-left{
+
+}
+
+
+.tic-tac-toe-center{
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tic-tac-toe-board{
+    width: 80%;
+    height: 80%;
+    border:10px solid #ffa54f;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+}
+.tic-tac-toe-grid{
+    display: grid;
+    grid-template-columns: 33% 32% 32%;
+    grid-template-rows: 32% 32% 32%;
+    height: 100%;
+    background-color: black;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+.tic-tac-toe-item1, .tic-tac-toe-item2, .tic-tac-toe-item3, .tic-tac-toe-item4, .tic-tac-toe-item5, .tic-tac-toe-item6, .tic-tac-toe-item7, .tic-tac-toe-item8, .tic-tac-toe-item9{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.tic-tac-toe-grid img{
+    height: 70%;
+}
+
+.tic-tac-toe-right{
+    
+}
