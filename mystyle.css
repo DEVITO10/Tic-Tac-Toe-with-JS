@@ -71,9 +71,8 @@ html, body{
     align-items: center;
     justify-content: center;
     height: 100%;
-}
-.tic-tac-toe-grid img{
-    height: 70%;
+    background-image: url("images/blank.png");
+    background-size: 100% 100%;
 }
 .tic-tac-toe-overlay{
     width: 100%;

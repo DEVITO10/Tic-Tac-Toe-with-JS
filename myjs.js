@@ -15,8 +15,9 @@ function nextTurn(turn){
     document.getElementById("turn").innerHTML="Turn: "+turn;
 }
 function check(item){
-    document.getElementById(item).setAttribute("src",next_symbol[0]);
-    document.getElementById(item).parentElement.style.pointerEvents="none";
+    var url="url('"+next_symbol[0]+"')";
+    document.getElementById(item).style.backgroundImage=url;
+    document.getElementById(item).style.pointerEvents="none";
     fill_win(item);
     if(next_symbol[0]=="images/x.png"){
         next_symbol = player[1];
@@ -65,10 +66,11 @@ function tie(){
 function reset(){
     next_symbol = player[0];
     nextTurn(next_symbol[2]);
+    count=0;
     items=[1,2,3,4,5,6,7,8,9];
     for(var i in items){
-        document.getElementById(items[i]).setAttribute("src","images/blank.png");
-        document.getElementById(items[i]).parentElement.style.pointerEvents="all";
+        document.getElementById(items[i]).style.backgroundImage="url('images/blank.png'";
+        document.getElementById(items[i]).style.pointerEvents="all";
     }
     document.getElementById("winner").innerHTML=" ";
     document.getElementById("tic-tac-toe-overlay").classList.remove("active");
