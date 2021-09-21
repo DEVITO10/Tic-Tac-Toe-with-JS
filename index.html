@@ -23,6 +23,9 @@
         </div>
         <div class="col-sm-12 col-md-6 tic-tac-toe-center">
             <div class="tic-tac-toe-board">
+                <div class="tic-tac-toe-overlay" id="tic-tac-toe-overlay">
+                    match end !
+                </div>
                 <div class="tic-tac-toe-grid">
                     <div class="tic-tac-toe-item1" onclick="check(1)"><img id="1" src="images/blank.png"></div>
                     <div class="tic-tac-toe-item2" onclick="check(2)"><img id="2" src="images/blank.png"></div>
@@ -38,6 +41,7 @@
         </div>
         <div class="col-sm-12 col-md-3 tic-tac-toe-right">
             <div class="tic-tac-toe-right-content">
+                <div class="tic-tac-toe-winner" id="winner"></div>
                 <button onclick="reset()">Replay</button>
             </div>
         </div>
