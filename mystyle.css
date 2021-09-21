@@ -105,4 +105,54 @@ html, body{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.tic-tac-toe-rules{
+    width: 90%;
+    height: 20%;
+    border: 5px solid red;
+    border-radius: 10px;
+    background-color: rgba(255,0,0,0.2);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.tic-tac-toe-turn{
+    width: 90%;
+    height: 10%;
+    border: 5px solid black;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.2);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tic-tac-toe-winner{
+    width: 90%;
+    height: 10%;
+    border: 5px solid green;
+    border-radius: 10px;
+    background-color: rgba(0,255,0,0.2);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: transform 0.2s;
+}
+.tic-tac-toe-winner.active{
+    transform: scale(1);
+}
+.tic-tac-toe-right-content #replay{
+    width: 90%;
+    height: 10%;
+    background-color: rgb(133, 204, 27);
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-top: 10px;
 }

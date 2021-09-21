@@ -41,8 +41,16 @@
         </div>
         <div class="col-sm-12 col-md-3 tic-tac-toe-right">
             <div class="tic-tac-toe-right-content">
+                <div class="tic-tac-toe-rules">
+                    Rules:<br>
+                    <ul>
+                        <li>Player 1 goes first as 'X'.</li>
+                        <li>Player 2 goes second as 'O'.</li>
+                    </ul>
+                </div>
+                <div class="tic-tac-toe-turn" id="turn"></div>
                 <div class="tic-tac-toe-winner" id="winner"></div>
-                <button onclick="reset()">Replay</button>
+                <button id="replay" onclick="reset()">Replay</button>
             </div>
         </div>
     </div>
