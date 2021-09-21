@@ -1,4 +1,6 @@
-var next_symbol=["images/x.png","x"];
+var player = [["images/x.png","x","Player 1"],["images/o.png","o","Player 2"]];
+var next_symbol = player[0];
+var count = 0;
 var wins = [
     new Map([[1,"n"],[2,"n"],[3,"n"]]),
     new Map([[4,"n"],[5,"n"],[6,"n"]]),
@@ -9,29 +11,30 @@ var wins = [
     new Map([[1,"n"],[5,"n"],[9,"n"]]),
     new Map([[3,"n"],[5,"n"],[7,"n"]]),
 ];
+function nextTurn(turn){
+    document.getElementById("turn").innerHTML="Turn: "+turn;
+}
 function check(item){
     document.getElementById(item).setAttribute("src",next_symbol[0]);
     document.getElementById(item).parentElement.style.pointerEvents="none";
     fill_win(item);
     if(next_symbol[0]=="images/x.png"){
-        next_symbol[0]="images/o.png";
-        next_symbol[1]="o";
+        next_symbol = player[1];
     }
     else{
-        next_symbol[0]="images/x.png";
-        next_symbol[1]="x";
+        next_symbol = player[0];
     }
+    count+=1;
+    if(count==9)
+        tie();
+    nextTurn(next_symbol[2]);
 }
 function fill_win(item){
-    console.log(item);
     for(var w in wins){
         if(wins[w].has(item)){
             wins[w].set(item,next_symbol[1]);
         }
     }
-    console.log("wins");
-    for(var a in wins)
-        console.log(wins[a]);
     isWinner();
 }
 function isWinner(){
@@ -41,7 +44,6 @@ function isWinner(){
         val+=arr.next().value
                +arr.next().value
                +arr.next().value;
-        console.log(val);
         if(val=="xxx" || val=="ooo"){
             declareWinner();
             break;
@@ -50,11 +52,19 @@ function isWinner(){
     }
 }
 function declareWinner(){
-    document.getElementById("winner").innerHTML=next_symbol[1];
+    nextTurn(' ');
+    document.getElementById("winner").innerHTML=next_symbol[2]+" wins !";
+    document.getElementById("winner").classList.add("active")
+    document.getElementById("tic-tac-toe-overlay").classList.add("active");
+}
+function tie(){
+    document.getElementById("winner").innerHTML="It is a Tie !";
+    document.getElementById("winner").classList.add("active")
     document.getElementById("tic-tac-toe-overlay").classList.add("active");
 }
 function reset(){
-    next_symbol=["images/x.png","x"];
+    next_symbol = player[0];
+    nextTurn(next_symbol[2]);
     items=[1,2,3,4,5,6,7,8,9];
     for(var i in items){
         document.getElementById(items[i]).setAttribute("src","images/blank.png");
@@ -62,6 +72,7 @@ function reset(){
     }
     document.getElementById("winner").innerHTML=" ";
     document.getElementById("tic-tac-toe-overlay").classList.remove("active");
+    document.getElementById("winner").classList.remove("active");
     wins = [
         new Map([[1,"n"],[2,"n"],[3,"n"]]),
         new Map([[4,"n"],[5,"n"],[6,"n"]]),
