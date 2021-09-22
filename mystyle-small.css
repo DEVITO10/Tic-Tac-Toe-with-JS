@@ -1,3 +1,55 @@
 @media screen and (max-device-width:480px) {
+    .tic-tac-toe-left, .tic-tac-toe-center,.tic-tac-toe-right{
+        width: 100%;
+        height: 33%;
+    }
 
+    /*Left Structure - The Title*/
+    .tic-tac-toe-left-content{
+        justify-content: left;
+    }
+    .tic-tac-toe-left-content img{
+        width: 50%;
+        height: 100%;
+    }
+    .tic-tac-toe-left-content .message{
+        width: 50%;
+        padding: 10px;
+    }
+
+    /*Center Structure - The Board*/
+    .tic-tac-toe-board{
+        height: 100%;
+    }
+    .tic-tac-toe-grid{
+        grid-row-gap: 5px;
+        grid-column-gap: 5px;
+    }
+
+    /*Right Structure - The Rules and The Result*/
+    .tic-tac-toe-right-content{
+        padding: 10px;
+    }
+    .tic-tac-toe-rules{
+        width: 50%;
+        height: 90%;
+        border: 2px solid red;
+    }
+    .tic-tac-toe-turn{
+        width: 50%;
+        height: 16%;
+        margin-left: 5px;
+        border:2px solid black;
+    }
+    .tic-tac-toe-winner{
+        width: 50%;
+        height: 16%;
+        margin-left: 5px;
+        border: 2px solid green;
+    }
+    .tic-tac-toe-right-content #replay{
+        width: 50%;
+        height: 16%;
+        margin-left: 5px;
+    }
 }
