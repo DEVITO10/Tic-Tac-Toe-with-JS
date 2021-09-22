@@ -156,25 +156,3 @@ html, body{
     outline: none;
     margin-top: 10px;
 }
-
-@media screen and (max-device-width:480px) {
-    .tic-tac-toe-left, .tic-tac-toe-center,.tic-tac-toe-right{
-        width: 100%;
-        height: 33%;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .tic-tac-toe-left-content{
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-    .tic-tac-toe-left-content img{
-        width: 50%;
-        height: auto;
-    }
-    .tic-tac-toe-left-content message{
-        padding:0;
-    }
-}
